@@ -1,0 +1,341 @@
+@include keyframes(fadein) {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(fadeout) {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#footer {
+    background: url(../images/black-denim-texture.jpg);
+    border-top: 1px solid #000;
+    box-shadow: inset 0 1px 0 rgba(255,255,255, 0.3);
+    position: relative;
+
+    .inner {
+        padding-top: 70px;
+        padding-bottom: 70px;
+
+        @media screen and (max-width: $mobile-break) {
+            padding-bottom: 30px;
+        }
+    }
+
+    .top-button {
+        overflow: hidden;
+        border-radius: 1000px;
+        width: 98px;
+        height: 98px;
+        position: absolute;
+        top: -57px;
+        left: 50%;
+        margin-left: -50px;
+        z-index: 1;
+        border: 1px solid transparent;
+        display: block;
+
+        .top-button-2 {
+            border-radius: 1000px;
+            background-color: #1E1E1E;
+            width: 90px;
+            height: 90px;
+            position: absolute;
+            top: 17px;
+            left: 4px;
+
+            .arrow {
+                height: 13px;
+                background: url(../images/footer-top-arrow.png) no-repeat center top;
+                margin-top: 11px;
+            }
+
+            .text {
+                color: #E9E9E9;
+                text-shadow: 0 -1px 0 #000;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 900;
+                text-transform: uppercase;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .top-cutout {
+        overflow: hidden;
+        width: 104px;
+        height: 72px;
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        margin-left: -52px;
+
+        .top-cutout-2 {
+            width: 101px;
+            height: 101px;
+            margin-top: -60px;
+            background-color: #000;
+            border-radius: 1000px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 1px 0 0 1px;
+
+            .top-cutout-3 {
+                width: 100px;
+                height: 100px;
+                background-image: url(../images/noise-texture.jpg);
+                border-radius: 1000px;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 18px;
+        color: #FFF;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: $mid-break) {
+            margin-top: 30px;
+        }
+
+        @media screen and (max-width: $mobile-break) {
+            margin-bottom: 5px;
+        }
+    }
+
+    .left {
+        @include inline-block;
+        width: 70%;
+
+        @media screen and (max-width: $mid-break) {
+            display: block;
+            width: auto;
+        }
+    }
+
+    .right {
+        @include inline-block;
+        width: 27%;
+        border-left: 1px solid #3a3a3a;
+        margin-left: -1px;
+        padding-left: 3%;
+
+        @media screen and (max-width: $mid-break) {
+            display: block;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            border-style: none;
+        }
+    }
+
+    ul.wallpapers {
+        margin-right: -20px;
+
+        img {
+            display: block;
+        }
+
+        & > li {
+            @include inline-block;
+            width: 33%;
+
+            @media screen and (max-width: $mid-break) {
+                width: 33%;
+            }
+
+            .item-inner {
+                position: relative;
+                width: 80%;
+
+                a {
+                    display: block;
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: 2px;
+                }
+
+                ul.devices {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: -1px;
+                    width: 31%;
+                    background-color: #000;
+                    border-top-right-radius: 2px;
+                    border-bottom-right-radius: 2px;
+
+                    @media screen and (max-width: $mobile-break) {
+                        display: none;
+                    }
+
+                    li {
+                        height: 30%;
+
+                        &:first-child {
+                            padding-top: 10%;
+                        }
+
+                        a {
+                            display: block;
+
+                            .no-touch &:hover {
+                                .icon.active {
+                                    display: block;
+                                }
+
+                                .icon.inactive {
+                                    display: none;
+                                }
+                            }
+
+                            .icon {
+                                width: 100%;
+                                display: block;
+                                margin-left: auto;
+                                margin-right: auto;
+
+                                &.active {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        &.desktop .icon {
+                            width: 70%;
+                        }
+
+                        &.tablet .icon {
+                            width: 55%;
+                        }
+
+                        &.mobile .icon {
+                            width: 60%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul.social-links {
+        margin-bottom: 30px;
+
+        & > li {
+            @include inline-block;
+            margin-right: 3%;
+
+            img {
+                width: 51px;
+            }
+        }
+    }
+
+    form {
+        .text-wrapper {
+            display: block;
+            position: relative;
+            padding: 5px 85px 4px 20px;
+            background-color: #FFF;
+            border-radius: 50px;
+            border-style: none;
+            box-shadow: inset 0 1px 2px #000;
+            border: 1px solid #000;
+
+            .text {
+                width: 100%;
+                background-color: transparent;
+                border-style: none;
+                font-size: 14px;
+                line-height: 26px;
+                height: 26px;
+
+                @include input-placeholder {
+                    color: #737272;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .submit {
+            position: absolute;
+            top: 5px;
+            right: 4px;
+            border-radius: 50px;
+            border: 1px solid #B04D13;
+            background-color: #F36E21;
+            @include background-image(linear-gradient(color-stops(#FE7F39 0, #E4621B 100%)));
+            box-shadow: inset 0 1px 0 #FF9E6A;
+            text-shadow: 0 -1px 0 #A14913;
+            color: #FFF;
+            font-size: 12px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .success-message {
+            font-size: 14px;
+            line-height: 26px;
+            display: none;
+        }
+
+        &.success {
+            &.in {
+                .success-message {
+                    display: none;
+                }
+
+                .text {
+                    display: block;
+                    @include animation(fadeout 0.4s both);
+                }
+
+                .submit {
+                    display: block;
+                    @include animation(fadeout 0.4s both);
+                }
+            }
+
+            &.out {
+                .success-message {
+                    display: block;
+                    @include animation(fadeout 0.4s both);
+                }
+
+                .text {
+                    display: none;
+                }
+
+                .submit {
+                    display: none;
+                }
+            }
+
+            .success-message {
+                display: block;
+                @include animation(fadein 0.4s both);
+            }
+
+            .text {
+                display: none;
+            }
+
+            .submit {
+                display: none;
+            }
+        }
+    }
+}

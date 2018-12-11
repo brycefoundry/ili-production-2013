@@ -1,0 +1,85 @@
+.header.rit {
+    background-color: #131313;
+
+    .inner {
+        height: 26px;
+        margin: 0 auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+        .logo {
+            float: left;
+
+            img {
+                padding: 0;
+                border: none;
+            }
+        }
+        .meta {
+            float: right;
+            height: 27px;
+
+            ul.links {
+                float: left;
+                margin: 0;
+
+                li {
+                    float: left;
+                    list-style-type: none;
+                    margin: 0;
+
+                    a {
+                        color: #FFF;
+                        float: left;
+                        font: normal 11px Arial;
+                        padding: 7px;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            form {
+                float: left;
+                margin: 3px 0 0 23px;
+
+                div.infield {
+                    position: relative;
+
+                    label {
+                        color: #959595;
+                        font: normal 11px Arial;
+                        left: 6px;
+                        top: 4px;
+                        position: absolute;
+                    }
+                    #rit-search-query {
+                        border: 0;
+                        color: #131313;
+                        font: normal 11px Arial;
+                        margin: 0;
+                        padding: 4px 5px;
+                        width: 135px;
+                        @include border-radius(5px);
+                    }
+                    .submit {
+                        border-style: none;
+<<<<<<< local
+                        background: #FFF url('/public/static/images/rit-search-bar-icon.gif') center right no-repeat;
+=======
+                        background: #FFF url('../images/rit-search-bar-icon.gif') center right no-repeat;
+>>>>>>> other
+                        display: block;
+                        height: 13px;
+                        position: absolute;
+                        right: 0;
+                        top: 3px;
+                        width: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+a {
+    color: expression(this.parentNode.currentStyle['color']);
+}
+
+.slide-navigation-active {
+    cursor: pointer;
+
+    &.dragging {
+        cursor: pointer;
+    }
+}
+
+.sidenav-wrapper,
+#slide-1 .slide-1-inner .icons,
+#slide-1 .glow .fade-overlay,
+.mobile-only {
+    display: none !important;
+}

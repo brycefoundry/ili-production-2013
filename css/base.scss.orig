@@ -1,0 +1,2188 @@
+@import 'compass/css3';
+@import 'compass/css3/user-interface';
+@import 'utils';
+@import 'rit_header';
+
+$orange: #F36E21;
+$mid-break: 800px;
+$mobile-break: 665px;
+$inline-block-alignment: top;
+$legacy-support-for-mozilla: false;
+$legacy-support-for-ie: true;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #2F2F2F;
+<<<<<<< local
+    background: url(/public/static/images/noise-texture.jpg);
+=======
+    background: url(../images/noise-texture.jpg);
+>>>>>>> other
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+img {
+    border-style: none;
+}
+
+h2 {
+    color: #212121;
+    font-size: 32px;
+    line-height: 1.3em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.preload {
+    display: none;
+}
+
+.orange {
+    color: $orange;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.no-margin-collapse {
+    overflow: hidden;
+    height: 0px;
+    width: 0px;
+}
+
+.global-wrapper {
+    min-height: 2000px;
+}
+
+.inner {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.inner-2 {
+    position: relative;
+}
+
+.next,
+.previous {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-right: 20px;
+    @include inline-block;
+    background-repeat: no-repeat;
+    background-position: right center;
+    text-shadow: 0 1px 0 #FFF;
+    font-size: 14px;
+}
+
+.next {
+<<<<<<< local
+    background-image: url(/public/static/images/next-arrow.png);
+=======
+    background-image: url(../images/next-arrow.png);
+>>>>>>> other
+}
+
+.previous {
+<<<<<<< local
+    background-image: url(/public/static/images/previous-arrow.png);
+=======
+    background-image: url(../images/previous-arrow.png);
+>>>>>>> other
+}
+
+.slide {
+    h2,
+    p {
+        text-shadow: 0 1px 0 #FFF;
+    }
+}
+
+.more {
+    border: 1px solid #A6A8A9;
+    border-radius: 50px;
+    @include inline-block;
+    @include background-image(linear-gradient(color-stops(#FDFDFD 0, #DFE0E0 100%)));
+    font-weight: 700;
+    position: relative;
+    font-size: 16px;
+
+    .more-inner {
+        display: block;
+        padding: 8px 10px 8px 20px;
+        margin-right: 35px;
+    }
+
+    .more-inner-2 {
+<<<<<<< local
+        background: url(/public/static/images/arrow-orange-right-2.png) no-repeat 4px center;
+=======
+        background: url(../images/arrow-orange-right-2.png) no-repeat 4px center;
+>>>>>>> other
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 30px;
+        border-left: 1px solid #F9F9F9;
+        box-shadow: -1px 0 0 #D4D4D4;
+    }
+}
+
+.icon-items {
+    li {
+        @include inline-block;
+        width: 50%;
+        border-top: 1px solid #CDCDCD;
+
+        @media screen and (max-width: $mid-break) {
+            width: 100%;
+
+            &.empty {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: $mid-break) {
+            &:nth-child(even) .item-inner {
+                border-left: 1px solid #CDCDCD;
+
+                .number {
+                    float: right;
+                }
+
+                .content {
+                    margin-left: 170px;
+                    margin-right: 50px;
+                }
+
+                .icon {
+                    float: left;
+                }
+            }
+        }
+
+        &:nth-child(odd) .item-inner {
+            border-right: 1px solid #CDCDCD;
+            margin-right: -1px;
+
+            @media screen and (max-width: $mid-break) {
+                border-right: none;
+                margin-right: 0;
+            }
+        }
+
+
+        .item-inner {
+            margin-top: 25px;
+            margin-bottom: 30px;
+
+            .number {
+                border-radius: 100px;
+                background-color: $orange;
+                width: 30px;
+                line-height: 30px;
+                text-align: center;
+                color: #FEFEFE;
+                font-size: 20px;
+                font-weight: 600;
+                float: left;
+                text-shadow: 0 1px 0 #CC5917;
+            }
+
+            .content {
+                margin-left: 50px;
+                margin-right: 170px;
+            }
+
+            .icon {
+                float: right;
+                margin-left: 25px;
+                margin-right: 25px;
+                width: 109px;
+                height: 109px;
+            }
+        }
+    }
+}
+
+.slide-navigation-active {
+    position: absolute;
+    color: #262626;
+    background-color: #FFF;
+    @include background-image(linear-gradient(color-stops(#FDFDFD 0, #DFE0E0 100%)));
+    border: 1px solid #A6A8A9;
+    padding: 5px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    @include transition(width 0.2s linear);
+    text-shadow: 0 1px 0 #FFF;
+    @include user-select(none);
+
+    cursor: pointer;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grab;
+
+    &.dragging {
+        cursor: pointer;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+        cursor: grabbing;
+    }
+
+    .slide-navigation-left,
+    .slide-navigation-right {
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 1px;
+        bottom: 0;
+        width: 20px;
+    }
+
+    .slide-navigation-left {
+<<<<<<< local
+        background-image: url(/public/static/images/arrow-orange-left.png);
+=======
+        background-image: url(../images/arrow-orange-left.png);
+>>>>>>> other
+        background-position: 8px center;
+        left: 0;
+        border-right: 1px solid #F9F9F9;
+        box-shadow: 1px 0 0 #D4D4D4;
+    }
+
+    .slide-navigation-right {
+<<<<<<< local
+        background-image: url(/public/static/images/arrow-orange-right.png);
+=======
+        background-image: url(../images/arrow-orange-right.png);
+>>>>>>> other
+        background-position: 6px center;
+        right: 0;
+        border-left: 1px solid #F9F9F9;
+        box-shadow: -1px 0 0 #D4D4D4;
+    }
+}
+
+.ili-header {
+    height: 120px;
+    background-color: #2F2F2F;
+    @include background-image(linear-gradient(color-stops(#353535 0, #292929 100%)));
+    padding-top: 1px;
+    position: relative;
+    @include box-shadow(0 1px 4px rgba(0,0,0,0.5));
+    border-bottom: 1px solid #333;
+    z-index: 1;
+
+    .middle-bar-wrapper {
+        margin-top: 20px;
+        border-bottom: 1px solid #333;
+    }
+
+    .middle-bar {
+        overflow: hidden;
+        position: relative;
+        height: 83px;
+        background-color: rgba(0, 0, 0, 0.3);
+<<<<<<< local
+        background-image: url(/public/static/images/header-texture.png);
+=======
+        background-image: url(../images/header-texture.png);
+>>>>>>> other
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #1C1C1C;
+        @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.07), inset 0 -1px 0 rgba(0, 0, 0, 0.5));
+
+        .inner {
+            position: relative;
+            height: 83px;
+        }
+    }
+
+    .inner {
+        position: relative;
+        z-index: 1;
+    }
+
+    .ili-logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: block;
+    }
+
+    .ili-logo-text {
+        position: absolute;
+        top: 43px;
+        left: 150px;
+        display: block;
+
+        @media screen and (max-width: 1020px) {
+            width: 166px;
+            top: 30px;
+        }
+    }
+
+    .main-navigation-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .main-navigation-wrapper-2 {
+        float: right;
+<<<<<<< local
+        background: url(/public/static/images/navigation-triangle.png);
+=======
+        background: url(../images/navigation-triangle.png);
+>>>>>>> other
+        padding-left: 48px;
+        padding-right: 20px;
+    }
+
+    ul.main-navigation {
+        font-size: 13px;
+        background-color: #2B2B2B;
+        @include background-image(linear-gradient(color-stops(#363636 0, #202020 100%)));
+        border-top: 1px solid #010102;
+        border-bottom: 1px solid #020203;
+        padding-right: 700px;
+        margin-right: -700px;
+        @include box-shadow(inset 0 1px 0 #4A4A4A);
+
+        @media screen and (max-width: $mid-break) {
+            font-size: 12px;
+        }
+
+
+        li {
+            @include inline-block;
+            border-right: 1px solid #1E1E1E;
+            @include box-shadow(inset -1px 0 0 #434343);
+            text-shadow: 0 -1px 0 #000;
+            font-weight: 400;
+            color: #FFF;
+
+            a {
+                display: block;
+                line-height: 40px;
+                padding-left: 20px;
+                padding-right: 20px;
+<<<<<<< local
+                background: url(/public/static/images/navigation-bottom-arrow.png) no-repeat right bottom;
+=======
+                background: url(../images/navigation-bottom-arrow.png) no-repeat right bottom;
+>>>>>>> other
+                @include transition(background-image 0.3s);
+
+                @media screen and (max-width: $mid-break) {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+                &:hover {
+<<<<<<< local
+                    background-image: url(/public/static/images/navigation-bottom-arrow-active.png);
+=======
+                    background-image: url(../images/navigation-bottom-arrow-active.png);
+>>>>>>> other
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+// Intro animations
+    @include keyframes(drift) {
+        from {
+            @include transform(rotate(0));
+        }
+        to {
+            @include transform(rotate(360deg));
+        }
+    }
+
+    @include keyframes(drift_inner) {
+        from {
+            @include transform(rotate(360deg));
+        }
+        to {
+            @include transform(rotate(0));
+        }
+    }
+
+    @include keyframes(drift_opposite) {
+        from {
+            @include transform(rotate(0));
+        }
+        to {
+            @include transform(rotate(-360deg));
+        }
+    }
+
+    @include keyframes(drift_opposite_inner) {
+        from {
+            @include transform(rotate(-360deg));
+        }
+        to {
+            @include transform(rotate(0));
+        }
+    }
+
+
+    @include keyframes(ray_1_in) {
+        from { width: 0;     }
+        to   { width: 557px; }
+    }
+
+    @include keyframes(ray_2_in) {
+        from { width: 0;     }
+        to   { width: 490px; }
+    }
+
+    @include keyframes(ray_3_in) {
+        from { width: 0;     }
+        to   { width: 400px; }
+    }
+
+    @include keyframes(ray_4_in) {
+        from { width: 0;     }
+        to   { width: 390px; }
+    }
+
+    @include keyframes(ray_5_in) {
+        from { width: 0;     }
+        to   { width: 310px; }
+    }
+
+    @include keyframes(ray_6_in) {
+        from { width: 0;     }
+        to   { width: 380px; }
+    }
+
+    @include keyframes(ray_7_in) {
+        from { width: 0;     }
+        to   { width: 490px; }
+    }
+
+    @include keyframes(ray_8_in) {
+        from { width: 0;     }
+        to   { width: 470px; }
+    }
+
+    @include keyframes(ray_9_in) {
+        from { width: 0;     }
+        to   { width: 557px; }
+    }
+
+    @include keyframes(ray_10_in) {
+        from { width: 0;     }
+        to   { width: 360px; }
+    }
+
+    @include keyframes(ray_11_in) {
+        from { width: 0;     }
+        to   { width: 505px; }
+    }
+
+    @include keyframes(ray_12_in) {
+        from { width: 0;     }
+        to   { width: 435px; }
+    }
+
+    @include keyframes(ray_13_in) {
+        from { width: 0;     }
+        to   { width: 375px; }
+    }
+
+    @include keyframes(ray_14_in) {
+        from { width: 0;     }
+        to   { width: 495px; }
+    }
+
+    @include keyframes(ray_15_in) {
+        from { width: 0;     }
+        to   { width: 405px; }
+    }
+
+    @include keyframes(ray_16_in) {
+        from { width: 0;     }
+        to   { width: 455px; }
+    }
+
+    @include keyframes(ray_17_in) {
+        from { width: 0;     }
+        to   { width: 395px; }
+    }
+
+    @include keyframes(ray_18_in) {
+        from { width: 0;     }
+        to   { width: 525px; }
+    }
+
+    @include keyframes(ray_19_in) {
+        from { width: 0;     }
+        to   { width: 435px; }
+    }
+
+    @include keyframes(ray_20_in) {
+        from { width: 0;     }
+        to   { width: 420px; }
+    }
+
+
+    @include keyframes(ray_1_rotate) {
+        from { @include transform(rotate(-190deg)) }
+        to   { @include transform(rotate(170deg))  }
+    }
+
+    @include keyframes(ray_2_rotate) {
+        from { @include transform(rotate(-170deg)) }
+        to   { @include transform(rotate(-530deg)) }
+    }
+
+    @include keyframes(ray_3_rotate) {
+        from { @include transform(rotate(-130deg)) }
+        to   { @include transform(rotate(230deg))  }
+    }
+
+    @include keyframes(ray_4_rotate) {
+        from { @include transform(rotate(-100deg)) }
+        to   { @include transform(rotate(-460deg)) }
+    }
+
+    @include keyframes(ray_5_rotate) {
+        from { @include transform(rotate(-90deg)) }
+        to   { @include transform(rotate(270deg)) }
+    }
+
+    @include keyframes(ray_6_rotate) {
+        from { @include transform(rotate(-60deg)) }
+        to   { @include transform(rotate(300deg)) }
+    }
+
+    @include keyframes(ray_7_rotate) {
+        from { @include transform(rotate(-45deg))  }
+        to   { @include transform(rotate(-405deg)) }
+    }
+
+    @include keyframes(ray_8_rotate) {
+        from { @include transform(rotate(-20deg)) }
+        to   { @include transform(rotate(340deg)) }
+    }
+
+    @include keyframes(ray_9_rotate) {
+        from { @include transform(rotate(5deg))   }
+        to   { @include transform(rotate(365deg)) }
+    }
+
+    @include keyframes(ray_10_rotate) {
+        from { @include transform(rotate(45deg))  }
+        to   { @include transform(rotate(405deg)) }
+    }
+
+    @include keyframes(ray_11_rotate) {
+        from { @include transform(rotate(75deg))   }
+        to   { @include transform(rotate(-285deg)) }
+    }
+
+    @include keyframes(ray_12_rotate) {
+        from { @include transform(rotate(95deg))   }
+        to   { @include transform(rotate(-265deg)) }
+    }
+
+    @include keyframes(ray_13_rotate) {
+        from { @include transform(rotate(140deg)) }
+        to   { @include transform(rotate(500deg)) }
+    }
+
+    @include keyframes(ray_14_rotate) {
+        from { @include transform(rotate(155deg))  }
+        to   { @include transform(rotate(-205deg)) }
+    }
+
+    @include keyframes(ray_15_rotate) {
+        from { @include transform(rotate(15deg))  }
+        to   { @include transform(rotate(375deg)) }
+    }
+
+    @include keyframes(ray_16_rotate) {
+        from { @include transform(rotate(-125deg)) }
+        to   { @include transform(rotate(-485deg)) }
+    }
+
+    @include keyframes(ray_17_rotate) {
+        from { @include transform(rotate(195deg)) }
+        to   { @include transform(rotate(555deg)) }
+    }
+
+    @include keyframes(ray_18_rotate) {
+        from { @include transform(rotate(255deg))  }
+        to   { @include transform(rotate(-105deg)) }
+    }
+
+    @include keyframes(ray_19_rotate) {
+        from { @include transform(rotate(-55deg)) }
+        to   { @include transform(rotate(305deg)) }
+    }
+
+    @include keyframes(ray_20_rotate) {
+        from { @include transform(rotate(105deg))  }
+        to   { @include transform(rotate(-255deg)) }
+    }
+
+#slide-1 {
+    position: relative;
+    border-top: 1px solid #E4E4E4;
+    @include background-image(linear-gradient(color-stops(#BBB 0, #FFF 50%)));
+    overflow: hidden;
+
+    .glow {
+<<<<<<< local
+        background: url(/public/static/images/slide-1-glow.png) no-repeat center top;
+=======
+        background: url(../images/slide-1-glow.png) no-repeat center top;
+>>>>>>> other
+    }
+
+    .fade-overlay {
+<<<<<<< local
+        background: url(/public/static/images/slide-1-white-gradient.png) repeat-x left top;
+=======
+        background: url(../images/slide-1-white-gradient.png) repeat-x left top;
+>>>>>>> other
+        width: 100%;
+        height: 400px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        z-index: 1;
+    }
+
+    .slide-1-inner {
+<<<<<<< local
+        background-image: url(/public/static/images/grid-texture.png);
+=======
+        background-image: url(../images/grid-texture.png);
+>>>>>>> other
+
+        .imac {
+            display: block;
+            width: 615px;
+            height: 513px;
+            margin-top: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .video,
+        .video-fallback {
+            position: absolute;
+            top: 174px;
+            left: 50%;
+            margin-left: -284px;
+            z-index: 4;
+<<<<<<< local
+            background: url(/public/static/videos/intro-poster.jpg) no-repeat;
+=======
+>>>>>>> other
+        }
+
+        .next {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 10px;
+<<<<<<< local
+            background-image: url(/public/static/images/next-arrow-white.png);
+=======
+            background-image: url(../images/next-arrow-white.png);
+>>>>>>> other
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .icons {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 2;
+
+            .icon {
+                position: absolute;
+                @include transition-property('top, left');
+                @include transition-duration('0.6s, 0.6s');
+                @include transform-origin(55%, 55%);
+            }
+
+            .icon-1 {
+                top: 480px;
+                left: -310px;
+                @include transition-delay('0, 0');
+            }
+
+            .icon-2 {
+                top: 330px;
+                left: -360px;
+                @include transition-delay('0.2s, 0.2s');
+            }
+
+            .icon-3 {
+                top: 150px;
+                left: -260px;
+                @include transition-delay('0.3s, 0.3s');
+            }
+
+            .icon-4 {
+                top: 150px;
+                left: -60px;
+                @include transition-delay('0.15s, 0.15s');
+            }
+
+            .icon-5 {
+                top: 150px;
+                left: 0;
+                @include transition-delay('0.05s, 0.05s');
+            }
+
+            .icon-6 {
+                top: 150px;
+                left: 85px;
+                @include transition-delay('0.35s, 0.35s');
+            }
+
+            .icon-7 {
+                top: 150px;
+                left: 100px;
+                @include transition-delay('0.1s, 0.1s');
+            }
+
+            .icon-8 {
+                top: 270px;
+                left: 115px;
+                @include transition-delay('0.25s, 0.25s');
+            }
+
+            .icon-9 {
+                top: 300px;
+                left: 100px;
+                @include transition-delay('0.2s, 0.2s');
+            }
+
+            &.drift {
+                .icon-1 {
+                    @include animation(drift 8s linear infinite);
+
+                    img {
+                        @include animation(drift_inner 8s linear infinite);
+                    }
+                }
+
+                .icon-2 {
+                    @include animation(drift 9s linear infinite);
+
+                    img {
+                        @include animation(drift_inner 9s linear infinite);
+                    }
+                }
+
+                .icon-3 {
+                    @include animation(drift 6s linear infinite);
+
+                    img {
+                        @include animation(drift_inner 6s linear infinite);
+                    }
+                }
+
+                .icon-4 {
+                    @include animation(drift_opposite 11s linear infinite);
+
+                    img {
+                        @include animation(drift_opposite_inner 11s linear infinite);
+                    }
+                }
+
+                .icon-5 {
+                    @include animation(drift 8.5s linear infinite);
+
+                    img {
+                        @include animation(drift_inner 8.5s linear infinite);
+                    }
+                }
+
+                .icon-6 {
+                    @include animation(drift_opposite 10s linear infinite);
+
+                    img {
+                        @include animation(drift_opposite_inner 10s linear infinite);
+                    }
+                }
+
+                .icon-7 {
+                    @include animation(drift 7s linear infinite);
+
+                    img {
+                        @include animation(drift_inner 7s linear infinite);
+                    }
+                }
+
+                .icon-8 {
+                    @include animation(drift 9.5s linear infinite);
+
+                    img {
+                        @include animation(drift_inner 9.5s linear infinite);
+                    }
+                }
+
+                .icon-9 {
+                    @include animation(drift 10.5s linear infinite);
+
+                    img {
+                        @include animation(drift_inner 10.5s linear infinite);
+                    }
+                }
+            }
+
+            &.explode {
+                .icon-1 {
+                    top: 420px;
+                    left: -440px;
+                }
+
+                .icon-2 {
+                    top: 190px;
+                    left: -560px;
+                }
+
+                .icon-3 {
+                    top: 50px;
+                    left: -480px;
+                }
+
+                .icon-4 {
+                    top: -50px;
+                    left: -300px;
+                }
+
+                .icon-5 {
+                    top: 70px;
+                    left: 90px;
+                }
+
+                .icon-6 {
+                    top: -10px;
+                    left: 230px;
+                }
+
+                .icon-7 {
+                    top: 160px;
+                    left: 380px;
+                }
+
+                .icon-8 {
+                    top: 210px;
+                    left: 240px;
+                }
+
+                .icon-9 {
+                    top: 400px;
+                    left: 390px;
+                }
+            }
+        }
+
+        .rays {
+            position: absolute;
+            top: 0;
+            left: 50%;
+
+            .ray {
+                position: absolute;
+                top: 370px;
+                left: 0;
+                width: 0;
+                @include transform-origin(0, 50%);
+            }
+
+            .ray-1 {
+                opacity: 0.13;
+            }
+
+            .ray-2 {
+                opacity: 0.10;
+            }
+
+            .ray-3 {
+                opacity: 0.20;
+            }
+
+            .ray-4 {
+                opacity: 0.22;
+            }
+
+            .ray-5 {
+                opacity: 0.15;
+            }
+
+            .ray-6 {
+                opacity: 0.17;
+            }
+
+            .ray-7 {
+                opacity: 0.11;
+            }
+
+            .ray-8 {
+                opacity: 0.12;
+            }
+
+            .ray-9 {
+                opacity: 0.18;
+            }
+
+            .ray-10 {
+                opacity: 0.19;
+            }
+
+            .ray-11 {
+                opacity: 0.13;
+            }
+
+            .ray-12 {
+                opacity: 0.13;
+            }
+
+            .ray-13 {
+                opacity: 0.16;
+            }
+
+            .ray-14 {
+                opacity: 0.13;
+            }
+
+            .ray-15 {
+                opacity: 0.13;
+            }
+
+            .ray-16 {
+                opacity: 0.17;
+            }
+
+            .ray-17 {
+                opacity: 0.13;
+            }
+
+            .ray-18 {
+                opacity: 0.09;
+            }
+
+            .ray-19 {
+                opacity: 0.14;
+            }
+
+            .ray-20 {
+                opacity: 0.08;
+            }
+
+            &.explode {
+                .ray-1 {
+                    width: 557px;
+                    @include transform(rotate(-190deg));
+                    @include animation(ray_1_in 1s, ray_1_rotate 100s linear infinite);
+                }
+
+                .ray-2 {
+                    width: 490px;
+                    @include transform(rotate(-170deg));
+                    @include animation(ray_2_in 1s, ray_2_rotate 70s linear infinite);
+                }
+
+                .ray-3 {
+                    width: 400px;
+                    @include transform(rotate(-130deg));
+                    @include animation(ray_3_in 1s, ray_3_rotate 200s linear infinite);
+                }
+
+                .ray-4 {
+                    width: 390px;
+                    @include transform(rotate(-100deg));
+                    @include animation(ray_4_in 1s, ray_4_rotate 120s linear infinite);
+                }
+
+                .ray-5 {
+                    width: 310px;
+                    @include transform(rotate(-90deg));
+                    @include animation(ray_5_in 1s, ray_5_rotate 160s linear infinite);
+                }
+
+                .ray-6 {
+                    width: 380px;
+                    @include transform(rotate(-60deg));
+                    @include animation(ray_6_in 1s, ray_6_rotate 110s linear infinite);
+                }
+
+                .ray-7 {
+                    width: 490px;
+                    @include transform(rotate(-45deg));
+                    @include animation(ray_7_in 1s, ray_7_rotate 90s linear infinite);
+                }
+
+                .ray-8 {
+                    width: 470px;
+                    @include transform(rotate(-20deg));
+                    @include animation(ray_8_in 1s, ray_8_rotate 180s linear infinite);
+                }
+
+                .ray-9 {
+                    width: 557px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_9_in 1s, ray_9_rotate 175s linear infinite);
+                }
+
+                .ray-10 {
+                    width: 360px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_10_in 1s, ray_10_rotate 125s linear infinite);
+                }
+
+                .ray-11 {
+                    width: 505px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_11_in 1s, ray_11_rotate 115s linear infinite);
+                }
+
+                .ray-12 {
+                    width: 435px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_12_in 1s, ray_12_rotate 140s linear infinite);
+                }
+
+                .ray-13 {
+                    width: 375px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_13_in 1s, ray_13_rotate 130s linear infinite);
+                }
+
+                .ray-14 {
+                    width: 495px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_14_in 1s, ray_14_rotate 120s linear infinite);
+                }
+
+                .ray-15 {
+                    width: 405px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_15_in 1s, ray_15_rotate 90s linear infinite);
+                }
+
+                .ray-16 {
+                    width: 455px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_16_in 1s, ray_16_rotate 110s linear infinite);
+                }
+
+                .ray-17 {
+                    width: 395px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_17_in 1s, ray_17_rotate 180s linear infinite);
+                }
+
+                .ray-18 {
+                    width: 525px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_18_in 1s, ray_18_rotate 155s linear infinite);
+                }
+
+                .ray-19 {
+                    width: 435px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_19_in 1s, ray_19_rotate 125s linear infinite);
+                }
+
+                .ray-20 {
+                    width: 420px;
+                    @include transform(rotate(5deg));
+                    @include animation(ray_20_in 1s, ray_20_rotate 135s linear infinite);
+                }
+            }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 50%;
+
+            .star {
+                position: absolute;
+            }
+
+            .star-1 {
+                top: 240px;
+                left: -660px;
+                width: 59px;
+            }
+
+            .star-2 {
+                top: 60px;
+                left: 580px;
+                width: 30px;
+            }
+
+            .star-3 {
+                top: 60px;
+                left: -290px;
+                width: 45px;
+            }
+
+            .star-4 {
+                top: 60px;
+                left: 100px;
+                width: 59px;
+            }
+
+            .star-5 {
+                top: 70px;
+                left: 430px;
+                width: 25px;
+            }
+
+            .star-6 {
+                top: 150px;
+                left: 530px;
+                width: 50px;
+            }
+
+            .star-7 {
+                top: 280px;
+                left: 500px;
+                width: 59px;
+            }
+        }
+
+        .shelf-mouse {
+<<<<<<< local
+            background: url(/public/static/images/slide-1-shelf-mouse.png) no-repeat;
+=======
+            background: url(../images/slide-1-shelf-mouse.png) no-repeat;
+>>>>>>> other
+            width: 113px;
+            height: 33px;
+            position: absolute;
+            left: 15%;
+            bottom: 41px;
+            z-index: 3;
+        }
+
+        .shelf-pen {
+<<<<<<< local
+            background: url(/public/static/images/slide-1-shelf-pen.png) no-repeat;
+=======
+            background: url(../images/slide-1-shelf-pen.png) no-repeat;
+>>>>>>> other
+            width: 155px;
+            height: 24px;
+            position: absolute;
+            left: 71%;
+            bottom: 43px;
+            z-index: 3;
+        }
+
+        .shelf {
+<<<<<<< local
+            background: url(/public/static/images/slide-1-shelf.png) no-repeat center top;
+=======
+            background: url(../images/slide-1-shelf.png) no-repeat center top;
+>>>>>>> other
+            height: 65px;
+            z-index: 1;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+}
+
+#slide-2 {
+    .inner {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    h2 {
+        border-bottom: 1px solid #AAA;
+        box-shadow: 0 1px 0 #FFF;
+        padding-bottom: 8px;
+        margin-bottom: 17px;
+    }
+
+    ul.navigation {
+        position: relative;
+        font-size: 16px;
+        color: $orange;
+        margin-bottom: 36px;
+        margin-top: 66px;
+
+        li {
+            @include inline-block;
+            padding-left: 55px;
+            margin-left: 10px;
+<<<<<<< local
+            background: url(/public/static/images/navigation-separator.png) no-repeat center left;
+=======
+            background: url(../images/navigation-separator.png) no-repeat center left;
+>>>>>>> other
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:first-child {
+                background-image: none;
+                padding-left: 0;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .left {
+        float: left;
+        padding: 0 30px;
+        border-right: 1px solid #AAA;
+
+        .icon {
+            width: 159px;
+            height: 159px;
+        }
+    }
+
+    .right {
+        margin-left: 250px;
+    }
+
+    .more {
+        float: right;
+        margin-top: 30px;
+    }
+}
+
+<<<<<<< local
+.slide-3 {
+    background-image: url(/public/static/images/slide-3-background.jpg);
+=======
+#slide-3 {
+    background-image: url(../images/slide-3-background.jpg);
+>>>>>>> other
+    background-repeat: repeat-x;
+    background-size: 48.5em;
+    height: 54.2em;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid #716E6A;
+    border-bottom: 1px solid #575653;
+
+    .inner-2 {
+        height: 54.2em;
+    }
+
+    .text-1,
+    .text-2,
+    .text-3,
+    .text-4 {
+        position: absolute;
+        top: 8em;
+    }
+
+    .text-1 {
+        width: 41.3em;
+    }
+
+    .text-2 {
+        position: absolute;
+        top: 12em;
+        width: 71em;
+    }
+
+    .text-3 {
+        position: absolute;
+        top: 25em;
+        width: 40.1em;
+    }
+
+    .text-4 {
+        width: 57.5em;
+    }
+
+    .iphone {
+        position: absolute;
+        right: 0;
+        top: 10em;
+        width: 88.8em;
+    }
+
+    .previous-wrapper,
+    .next-wrapper {
+        position: absolute;
+        left: 0;
+    }
+
+    .previous-wrapper {
+        top: 2.5em;
+    }
+
+    .next-wrapper {
+        bottom: 2.5em;
+    }
+
+    .previous,
+    .next {
+        color: #5F5C58;
+    }
+
+    .previous {
+<<<<<<< local
+        background-image: url(/public/static/images/previous-arrow-white.png);
+=======
+        background-image: url(../images/previous-arrow-white.png);
+>>>>>>> other
+    }
+
+    .next {
+<<<<<<< local
+        background-image: url(/public/static/images/next-arrow-white.png);
+=======
+        background-image: url(../images/next-arrow-white.png);
+>>>>>>> other
+    }
+}
+
+#slide-4 {
+    .inner {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    h2 {
+        border-bottom: 1px solid #AAA;
+        box-shadow: 0 1px 0 #FFF;
+        padding-bottom: 8px;
+        margin-bottom: 17px;
+    }
+
+    .left {
+        float: left;
+
+        @media screen and (max-width: $mobile-break) {
+            display: none;
+        }
+
+        .icon {
+            width: 167px;
+            height: 166px;
+        }
+    }
+
+    .right {
+        margin-left: 250px;
+
+        @media screen and (max-width: $mobile-break) {
+            margin-left: 0;
+        }
+    }
+
+    .more {
+        float: right;
+        margin-top: 60px;
+    }
+
+    .previous {
+        margin-bottom: 50px;
+    }
+
+    .next {
+        margin-top: 40px;
+    }
+
+    .slide-4-ring-wrapper {
+        position: relative;
+        width: 167px;
+        height: 167px;
+        padding: 25px;
+
+        .ring-items {
+            width: 167px;
+            height: 167px;
+            padding: 25px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .ring-middles {
+            position: absolute;
+            top: 64px;
+            left: 64px;
+
+            img {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+        .slide-4-ring-1,
+        .slide-4-ring-2,
+        .slide-4-ring-3,
+        .slide-4-ring-4 {
+            width: 49px;
+            height: 49px;
+            background-repeat: no-repeat;
+            position: absolute;
+            cursor: pointer;
+            @include transform-origin(50%, 50%);
+        }
+
+        .slide-4-ring-1 {
+<<<<<<< local
+            background-image: url(/public/static/images/slide-4-ring-ribbon.png);
+=======
+            background-image: url(../images/slide-4-ring-ribbon.png);
+>>>>>>> other
+            top: 0;
+            left: 84px;
+
+            &:hover,
+            &.active {
+<<<<<<< local
+                background-image: url(/public/static/images/slide-4-ring-ribbon-active.png);
+=======
+                background-image: url(../images/slide-4-ring-ribbon-active.png);
+>>>>>>> other
+            }
+        }
+
+        .slide-4-ring-2 {
+<<<<<<< local
+            background-image: url(/public/static/images/slide-4-ring-phone.png);
+=======
+            background-image: url(../images/slide-4-ring-phone.png);
+>>>>>>> other
+            top: 84px;
+            left: 167px;
+
+            &:hover,
+            &.active {
+<<<<<<< local
+                background-image: url(/public/static/images/slide-4-ring-phone-active.png);
+=======
+                background-image: url(../images/slide-4-ring-phone-active.png);
+>>>>>>> other
+            }
+        }
+
+        .slide-4-ring-3 {
+<<<<<<< local
+            background-image: url(/public/static/images/slide-4-ring-person.png);
+=======
+            background-image: url(../images/slide-4-ring-person.png);
+>>>>>>> other
+            top: 167px;
+            left: 84px;
+
+
+            &:hover,
+            &.active {
+<<<<<<< local
+                background-image: url(/public/static/images/slide-4-ring-person-active.png);
+=======
+                background-image: url(../images/slide-4-ring-person-active.png);
+>>>>>>> other
+            }
+        }
+
+        .slide-4-ring-4 {
+<<<<<<< local
+            background-image: url(/public/static/images/slide-4-ring-shield.png);
+=======
+            background-image: url(../images/slide-4-ring-shield.png);
+>>>>>>> other
+            top: 84px;
+            left: 0;
+
+            &:hover,
+            &.active {
+<<<<<<< local
+                background-image: url(/public/static/images/slide-4-ring-shield-active.png);
+=======
+                background-image: url(../images/slide-4-ring-shield-active.png);
+>>>>>>> other
+            }
+        }
+    }
+}
+
+<<<<<<< local
+.slide-5 {
+    background: url(/public/static/images/slide-5-background.jpg) repeat-x;
+=======
+#slide-5 {
+    background: url(../images/slide-5-background.jpg) repeat-x;
+>>>>>>> other
+    height: 54.1em;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid #B0B6B6;
+    background-size: 60em;
+
+    .inner-2 {
+        height: 54.1em;
+    }
+
+    .text-1,
+    .text-2,
+    .text-3,
+    .text-4 {
+        position: absolute;
+        left: 42em;
+    }
+
+    .text-1 {
+        width: 49.6em;
+    }
+
+    .text-2 {
+        width: 69.6em;
+    }
+
+    .text-3 {
+        width: 64.3em;
+    }
+
+    .text-4 {
+        width: 65.5em;
+    }
+
+    .photo {
+        position: absolute;
+        left: 0;
+        top: 7em;
+        @include transform-origin(12.4em, 0.9em);
+        width: 24.8em;
+    }
+
+    .noduh {
+        position: absolute;
+        left: -11em;
+        top: 27em;
+        width: 6.8em;
+    }
+
+    .radicaldude {
+        position: absolute;
+        left: 27em;
+        top: 5em;
+        width: 11.3em;
+    }
+
+    .next,
+    .previous {
+        color: #FFF;
+        text-shadow: 0 1px 0 #494B4B;
+        position: absolute;
+        left: 0;
+    }
+
+    .previous {
+        top: 25px;
+<<<<<<< local
+        background-image: url(/public/static/images/previous-arrow-white.png);
+=======
+        background-image: url(../images/previous-arrow-white.png);
+>>>>>>> other
+    }
+
+    .next {
+        bottom: 25px;
+<<<<<<< local
+        background-image: url(/public/static/images/next-arrow-white.png);
+=======
+        background-image: url(../images/next-arrow-white.png);
+>>>>>>> other
+    }
+
+    .envelope-1 {
+        position: absolute;
+        top: 43em;
+        left: 37em;
+        width: 27.7em;
+        @include transform(rotateZ(-5deg));
+
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 27.7em;
+        }
+
+        .paper {
+            position: absolute;
+            top: 2em;
+            left: 0.2em;
+        }
+
+        .front {
+            position: absolute;
+            top: 4.3em;
+            left: 0;
+            width: 27.7em;
+        }
+    }
+
+    .envelope-2 {
+        position: absolute;
+        top: 37em;
+        left: 59em;
+        box-shadow: 0 0 4em rgba(0, 0, 0, 0.3);
+        height: 49.6em;
+        width: 35.2em;
+        border-top-left-radius: 7em;
+        border-top-right-radius: 7em;
+
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .paper {
+            position: absolute;
+            top: 3em;
+            left: 0.3em;
+        }
+
+        .front {
+            position: absolute;
+            top: 5.5em;
+            left: 0;
+        }
+    }
+
+    .envelope-3 {
+        position: absolute;
+        top: 41em;
+        left: 89em;
+        width: 30.8em;
+        @include transform(rotateZ(5deg));
+
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30.8em;
+        }
+
+        .paper {
+            position: absolute;
+            top: 2.5em;
+            left: 0.3em;
+        }
+
+        .front {
+            position: absolute;
+            top: 4.7em;
+            left: 0;
+            width: 30.8em;
+        }
+    }
+}
+
+#slide-6 {
+    color: #363334;
+    margin-top: 1px;
+    border-top: 1px solid #EBEBEB;
+
+    .inner {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .more {
+        float: right;
+        margin-top: 20px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+        color: #525252;
+        text-shadow: 0 1px 0 #FFF;
+        font-weight: 400;
+    }
+
+    p {
+        color: #666767;
+        font-size: 14px;
+        text-shadow: 0 1px 0 #FFF;
+        font-weight: 300;
+    }
+
+    .previous {
+        margin-bottom: 50px;
+    }
+
+    .next {
+        margin-top: 90px;
+        clear: both;
+    }
+}
+
+<<<<<<< local
+.slide-7 {
+    background-image: url(/public/static/images/slide-7-background.jpg);
+=======
+#slide-7 {
+    background-image: url(../images/slide-7-background.jpg);
+>>>>>>> other
+    background-repeat: repeat-x;
+    background-size: 20em;
+    height: 54.3em;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 0 #B4B4B4, inset 0 -1px 0 #ADADAD;
+
+    .inner-2 {
+        height: 54.3em;
+    }
+
+    .text-1,
+    .text-2,
+    .text-3,
+    .text-4 {
+        position: absolute;
+        left: 0;
+    }
+
+    .text-1 {
+        width: 13.5em;
+    }
+
+    .text-2 {
+        width: 58.1em;
+    }
+
+    .text-3 {
+        width: 71.5em;
+    }
+
+    .text-4 {
+        width: 56.5em;
+    }
+
+    .poster-1 {
+        position: absolute;
+        left: 16em;
+        top: 0;
+        width: 30.2em;
+    }
+
+    .poster-2 {
+        position: absolute;
+        left: 48.5em;
+        top: 0;
+        width: 30.2em;
+    }
+
+    .poster-3 {
+        position: absolute;
+        left: 81em;
+        top: 0;
+        width: 30.3em;
+    }
+
+    .table {
+        position: absolute;
+        right: 0;
+        bottom: -17em;
+        width: 43.9em;
+    }
+
+    .clock-wrapper {
+        position: absolute;
+        right: 16.1em;
+        bottom: 19.5em;
+        width: 12.8em;
+        height: 12.9em;
+    }
+
+    .clock-noise {
+        position: absolute;
+        left: 1em;
+        top: -2em;
+        width: 10.8em;
+    }
+
+    .clock {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 12.8em;
+    }
+
+    .previous-wrapper,
+    .next-wrapper {
+        position: absolute;
+        left: 0;
+    }
+
+    .previous-wrapper {
+        top: 2.5em;
+    }
+
+    .next-wrapper {
+        bottom: 2.5em;
+    }
+
+    .previous {
+<<<<<<< local
+        background-image: url(/public/static/images/previous-arrow-white.png);
+=======
+        background-image: url(../images/previous-arrow-white.png);
+>>>>>>> other
+    }
+
+    .next {
+<<<<<<< local
+        background-image: url(/public/static/images/next-arrow-white.png);
+=======
+        background-image: url(../images/next-arrow-white.png);
+>>>>>>> other
+    }
+}
+
+#slide-8 {
+    color: #363334;
+    margin-top: 1px;
+    border-top: 1px solid #EBEBEB;
+
+    .inner {
+        padding-top: 25px;
+        padding-bottom: 65px;
+    }
+
+    .more {
+        float: right;
+        margin-top: 35px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+        color: #525252;
+        text-shadow: 0 1px 0 #FFF;
+        font-weight: 400;
+    }
+
+    p {
+        color: #666767;
+        font-size: 14px;
+        text-shadow: 0 1px 0 #FFF;
+        font-weight: 300;
+    }
+
+    .previous {
+        margin-bottom: 50px;
+    }
+
+    .next {
+        margin-top: 90px;
+        clear: both;
+    }
+}
+
+.footer {
+<<<<<<< local
+    background: url(/public/static/images/black-denim-texture.jpg);
+=======
+    background: url(../images/black-denim-texture.jpg);
+>>>>>>> other
+
+    .inner {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    h2 {
+        font-size: 18px;
+        color: #FFF;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: $mid-break) {
+            margin-top: 30px;
+        }
+    }
+
+    .left {
+        @include inline-block;
+        width: 70%;
+
+        @media screen and (max-width: $mid-break) {
+            display: block;
+            width: auto;
+        }
+    }
+
+    .right {
+        @include inline-block;
+        width: 27%;
+        border-left: 1px solid #3a3a3a;
+        margin-left: -1px;
+        padding-left: 3%;
+
+        @media screen and (max-width: $mid-break) {
+            display: block;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            border-style: none;
+        }
+    }
+
+    ul.wallpapers {
+        margin-right: -20px;
+
+        img {
+            display: block;
+        }
+
+        & > li {
+            @include inline-block;
+            width: 33%;
+
+            @media screen and (max-width: $mid-break) {
+                width: 33%;
+            }
+
+            .item-inner {
+                position: relative;
+                width: 80%;
+
+                img {
+                    width: 100%;
+                }
+
+                ul.devices {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: -1px;
+                    width: 31%;
+                    background-color: #000;
+
+                    li {
+                        height: 30%;
+
+                        &:first-child {
+                            padding-top: 10%;
+                        }
+
+                        .icon {
+                            width: 100%;
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+
+                            &.active {
+                                display: none;
+                            }
+                        }
+
+                        &:hover {
+                            .icon.active {
+                                display: block;
+                            }
+
+                            .icon.inactive {
+                                display: none;
+                            }
+                        }
+
+                        &.desktop .icon {
+                            width: 70%;
+                        }
+
+                        &.tablet .icon {
+                            width: 55%;
+                        }
+
+                        &.mobile .icon {
+                            width: 60%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul.social-links {
+        margin-bottom: 30px;
+
+        & > li {
+            @include inline-block;
+            margin-right: 3%;
+        }
+    }
+
+    form {
+        .text-wrapper {
+            display: block;
+            position: relative;
+            padding: 10px 20px;
+            background-color: #FFF;
+            border-radius: 50px;
+            border-style: none;
+            box-shadow: inset 0 1px 2px #000;
+            border: 1px solid #000;
+            overflow: hidden;
+
+            .text {
+                width: 100%;
+                background-color: transparent;
+                border-style: none;
+                font-size: 14px;
+
+                @include input-placeholder {
+                    color: #737272;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .submit {
+            position: absolute;
+            top: 5px;
+            right: 4px;
+            border-radius: 50px;
+            border: 1px solid #B04D13;
+            background-color: #F36E21;
+            @include background-image(linear-gradient(color-stops(#FE7F39 0, #E4621B 100%)));
+            box-shadow: inset 0 1px 0 #FF9E6A;
+            text-shadow: 0 -1px 0 #A14913;
+            color: #FFF;
+            font-size: 12px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .success-message {
+            font-size: 14px;
+            display: none;
+        }
+
+        &.success {
+            &.in {
+                .success-message {
+                    display: none;
+                }
+
+                .text {
+                    display: block;
+                    @include animation(fadeout 0.4s both);
+                }
+
+                .submit {
+                    display: block;
+                    @include animation(fadeout 0.4s both);
+                }
+            }
+
+            &.out {
+                .success-message {
+                    display: block;
+                    @include animation(fadeout 0.4s both);
+                }
+
+                .text {
+                    display: none;
+                }
+
+                .submit {
+                    display: none;
+                }
+            }
+
+            .success-message {
+                display: block;
+                @include animation(fadein 0.4s both);
+            }
+
+            .text {
+                display: none;
+            }
+
+            .submit {
+                display: none;
+            }
+        }
+    }
+}
+
+@include keyframes(fadein) {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(fadeout) {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

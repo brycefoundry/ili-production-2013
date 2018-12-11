@@ -1,0 +1,28 @@
+$inline-block-alignment: middle !default;
+
+// Provides a cross-browser method to implement `display: inline-block;`
+@mixin inline-block($alignment: $inline-block-alignment) {
+    @if $legacy-support-for-mozilla {
+        display: -moz-inline-stack;
+    }
+    display: inline-block;
+    @if $alignment and $alignment != none {
+        vertical-align: $alignment;
+    }
+    @if $legacy-support-for-ie {
+        *vertical-align: $inline-block-alignment;
+        zoom: 1;
+        *display: inline;
+    }
+}
+
+@mixin triangle($x, $y, $width, $color) {
+    border-width: $width / 2;
+    border-color: transparent;
+    border-style: solid;
+    border-#{$x}-color: $color;
+    border-#{$y}-color: $color;
+    width: 0;
+    height: 0;
+    display: block;
+}

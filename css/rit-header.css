@@ -1,0 +1,72 @@
+.header.rit {
+  background-color: #131313;
+}
+.header.rit .inner {
+  height: 26px;
+  margin: 0 auto;
+  padding: 13px 0;
+  width: 1006px;
+}
+.header.rit .inner .logo {
+  float: left;
+  width: 345px;
+}
+.header.rit .inner .logo img {
+  padding: 0;
+  border: none;
+}
+.header.rit .inner .meta {
+  float: right;
+  height: 27px;
+}
+.header.rit .inner .meta ul.links {
+  float: left;
+  margin: 0;
+}
+.header.rit .inner .meta ul.links li {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+}
+.header.rit .inner .meta ul.links li a {
+  color: #FFF;
+  float: left;
+  font: normal 11px Arial;
+  padding: 7px;
+  text-decoration: none;
+}
+.header.rit .inner .meta ul.links li a:hover {
+  text-decoration: underline;
+}
+.header.rit .inner .meta form {
+  float: left;
+  margin: 3px 0 0 23px;
+}
+.header.rit .inner .meta form div.infield {
+  position: relative;
+}
+.header.rit .inner .meta form div.infield label {
+  color: #959595;
+  font: normal 11px Arial;
+  left: 6px;
+  top: 4px;
+  position: absolute;
+}
+.header.rit .inner .meta form div.infield #rit-search-query {
+  border: 0;
+  color: #131313;
+  font: normal 11px Arial;
+  margin: 0;
+  padding: 4px 5px;
+  width: 135px;
+}
+.header.rit .inner .meta form div.infield .submit {
+  border-style: none;
+  background: #ffffff url('/public/public/static/images/rit-search-bar-icon.gif') center right no-repeat;
+  display: block;
+  height: 13px;
+  position: absolute;
+  right: 0;
+  top: 3px;
+  width: 16px;
+}

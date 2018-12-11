@@ -1,0 +1,160 @@
+#slide-4 {
+    @include transform(translate3d(0, 0, 0));
+
+    .inner {
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+        @media screen and (max-width: $mobile-break) {
+            text-align: center;
+        }
+    }
+
+    h2 {
+        border-bottom: 1px solid #AAA;
+        box-shadow: 0 1px 0 #FFF;
+        padding-bottom: 8px;
+        margin-bottom: 17px;
+
+        @media screen and (max-width: $mobile-break) {
+            border-bottom-style: none;
+            box-shadow: none;
+            margin-bottom: 5px;
+        }
+    }
+
+    .icon-header .middle-cell {
+        background-image: url(../images/slide-4-mobile-icon.png);
+    }
+
+    .left {
+        float: left;
+
+        @media screen and (max-width: $mobile-break) {
+            display: none;
+        }
+
+        .icon {
+            width: 167px;
+            height: 166px;
+        }
+    }
+
+    .right {
+        margin-left: 250px;
+
+        @media screen and (min-width: $mobile-break) {
+            min-height: 165px;
+        }
+
+        @media screen and (max-width: $mobile-break) {
+            margin-left: 0;
+        }
+    }
+
+    .more {
+        float: right;
+        margin-top: 10px;
+
+        @media screen and (max-width: $mobile-break) {
+            float: none;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .previous {
+        margin-bottom: 50px;
+    }
+
+    .next {
+        margin-top: 40px;
+    }
+
+    .slide-4-ring-wrapper {
+        position: relative;
+        width: 167px;
+        height: 167px;
+        padding: 25px;
+
+        .ring-items {
+            width: 167px;
+            height: 167px;
+            padding: 25px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .ring-middles {
+            position: absolute;
+            top: 64px;
+            left: 64px;
+
+            img {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+        .slide-4-ring-1,
+        .slide-4-ring-2,
+        .slide-4-ring-3,
+        .slide-4-ring-4 {
+            width: 49px;
+            height: 49px;
+            background-repeat: no-repeat;
+            position: absolute;
+            cursor: pointer;
+            @include transform-origin(50%, 50%);
+        }
+
+        .slide-4-ring-1 {
+            background-image: url(../images/slide-4-ring-ribbon.png);
+            top: 0;
+            left: 84px;
+
+            &:hover,
+            &.active {
+                background-image: url(../images/slide-4-ring-ribbon-active.png);
+            }
+        }
+
+        .slide-4-ring-2 {
+            background-image: url(../images/slide-4-ring-phone.png);
+            top: 84px;
+            left: 167px;
+
+            &:hover,
+            &.active {
+                background-image: url(../images/slide-4-ring-phone-active.png);
+            }
+        }
+
+        .slide-4-ring-3 {
+            background-image: url(../images/slide-4-ring-person.png);
+            top: 167px;
+            left: 84px;
+
+
+            &:hover,
+            &.active {
+                background-image: url(../images/slide-4-ring-person-active.png);
+            }
+        }
+
+        .slide-4-ring-4 {
+            background-image: url(../images/slide-4-ring-shield.png);
+            top: 84px;
+            left: 0;
+
+            &:hover,
+            &.active {
+                background-image: url(../images/slide-4-ring-shield-active.png);
+            }
+        }
+    }
+}
